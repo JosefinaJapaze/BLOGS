@@ -26,7 +26,7 @@ git clone https://github.com/JosefinaJapaze/BLOGS.git
 
 1. La aplicación utiliza SQLite como base de datos por defecto. No es necesario configurar nada adicional, 
 ya que Spring Boot lo maneja automáticamente. 
-La base de datos se creará automáticamente en un archivo llamado `nombre-de-tu-base-de-datos.db` en el directorio de trabajo.
+La base de datos se creará automáticamente en un archivo llamado `sqlite.db` en el directorio de trabajo.
 
 ## Ejecución de la aplicación
 
