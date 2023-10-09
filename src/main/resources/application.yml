@@ -1,0 +1,43 @@
+spring:
+  datasource:
+    url: jdbc:sqlite:sqlite.db
+    username: sa
+    password: admin
+    driverClassName: org.sqlite.JDBC
+
+  jpa:
+    database-platform: org.hibernate.dialect.SQLiteDialect
+    hibernate:
+      hbm2ddl:
+        auto: validate or create
+      ddl-auto: create-drop
+      show-sql: true
+      format-sql: true
+      type: info
+      use-sql-comments: true
+      properties:
+        hibernate.use_sql_comments: true
+        hibernate.format_sql: true
+
+springdoc:
+  show-actuator: true
+  paths-to-match: /**
+  packages-to-scan: com.jjapaze.boilerplate.springboot
+
+management:
+  endpoint:
+    health:
+      show-details: ALWAYS
+    endpoints:
+      web:
+        exposure:
+          include: "*"
+
+logging:
+  level:
+    org.springframework: INFO
+    com.jjapaze.boilerplate.springboot: INFO
+
+
+swagger:
+  contact-name: Josefina Japaze
