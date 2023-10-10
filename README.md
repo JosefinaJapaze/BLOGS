@@ -35,3 +35,5 @@ La base de datos se creará automáticamente en un archivo llamado `sqlite.db` e
 mvn spring-boot:run
 
 2. Una vez levantada la aplicación, se deberá realizar un curl localhost:8080/blog/update para guardar los posts en la base de datos.
+
+3. Se puede acceder al swagger de la aplicación en http://localhost:8080/swagger-ui.html
