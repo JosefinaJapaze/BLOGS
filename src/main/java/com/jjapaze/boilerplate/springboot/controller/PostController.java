@@ -18,7 +18,7 @@ import java.util.Optional;
 @RestController
 public class PostController {
 
-    private final PostRepository postRepository; // Inyecta tu repositorio aquí
+    private final PostRepository postRepository;
 
     @Autowired
     public PostController(PostRepository postRepository) {
@@ -55,6 +55,10 @@ public class PostController {
 
     @GetMapping("/search")
     public ResponseEntity<List<Post>> searchPostsByTitle(@RequestParam("title") String title) {
+        if (title == null || title.isEmpty()) {
+            return ResponseEntity.badRequest().build();
+        }
+
         List<Post> posts = postRepository.findByTitleContaining(title);
         return ResponseEntity.ok(posts);
     }
